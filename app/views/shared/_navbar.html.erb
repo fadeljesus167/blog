@@ -1,0 +1,13 @@
+<div>
+  <header class="d-flex align-items-center justify-content-center py-3">
+    <ul class="nav nav-pills">
+      <li class="nav-item"><%= link_to "Home", posts_path, class: "nav-link" %></li>
+      <li class="nav-item"><%= link_to "New post", new_post_path, class: "nav-link" %></li>
+      <li class="nav-item"><%= link_to "Login", new_session_path, class: "nav-link" if current_user.nil? %></li>
+      <li class="nav-item"><%= link_to "Logout", login_path, class: "nav-link", data: { turbo_method: :delete } unless current_user.nil? %></li>
+      <% if !current_user.nil? %>
+        <li class="nav-item"><span class="align-bottom">&#9786 Hello  <%= current_user.username %>!</span></li>
+      <% end %>
+    </ul>
+  </header>
+</div>
