@@ -1,7 +1,4 @@
 <h1><%= @post.title %></h1>
-
-<%= simple_format @post.content %>
-
 <% if current_user.eql?(@post.user) %>
   <div>
     <%= link_to "Edit", edit_post_path(@post) %>
@@ -9,12 +6,17 @@
   </div>
 <% end %>
 
-<%= render partial: "comment", collection: @comments %>
+<%= simple_format @post.content %>
 
+<h2>Comments</h2>
+<h5>Add a comment</h5>
 <%= form_with url: new_comment_path do |form| %>
-  <div>
-    <%= form.text_area :content %>
+  <div class="mb-3">
+    <%= form.label :content, "#{current_user&.username}:" %>
+    <%= form.text_area :content, size: "70x4", class: 'form-control w-50' %>
   </div>
 
-  <%= form.submit "Add comment" %>
+  <%= form.submit "Add comment", class: 'btn btn-success btn-sm' %>
 <% end %>
+
+<%= render partial: "comment", collection: @comments %>

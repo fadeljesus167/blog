@@ -2,24 +2,24 @@
   <%= form.hidden_field :user_id, value: current_user&.id %>
   <% if post.errors.any? %>
     <div>
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <h6 class="text-danger"><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h6>
 
-      <ul>
+      <ul class="list-group w-25">
         <% post.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+          <li class="list-group-item list-group-item-danger"><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="mb-3">
+    <%= form.label :title, class: 'form-label' %>
+    <%= form.text_field :title, class: 'form-control' %>
   </div>
 
-  <div>
-    <%= form.label :content, style: "display: block" %>
-    <%= form.text_area :content %>
+  <div class="mb-3">
+    <%= form.label :content, class: 'form-label' %>
+    <%= form.rich_text_area :content, rows: 20, class: 'form-control' %>
   </div>
 
   <div>
