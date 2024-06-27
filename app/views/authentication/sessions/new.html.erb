@@ -1,16 +1,16 @@
-<h1>Login</h1>
+<h1 class="text-center">Login</h1>
 
-<%= form_with url: new_session_path do |form| %>
-  <div>
-    <%= form.text_field :username, placeholder: 'Username' %>
+<%= form_with url: new_session_path, class: 'w-50 mx-auto' do |form| %>
+  <div class="mb-3">
+    <%= form.text_field :username, placeholder: 'Username', class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.password_field :password, placeholder: 'Password', class: 'form-control' %>
   </div>
 
   <div>
-    <%= form.password_field :password, placeholder: 'Password' %>
-  </div>
-
-  <div>
-    <%= form.submit 'Login' %>
+    <%= form.submit 'Login', class: 'form-submit' %>
   </div>
 <% end %>
 

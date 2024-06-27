@@ -8,15 +8,8 @@
 
 <%= simple_format @post.content %>
 
-<h2>Comments</h2>
 <h5>Add a comment</h5>
-<%= form_with url: new_comment_path do |form| %>
-  <div class="mb-3">
-    <%= form.label :content, "#{current_user&.username}:" %>
-    <%= form.text_area :content, size: "70x4", class: 'form-control w-50' %>
-  </div>
+<%= render partial: "new_comment" %>
 
-  <%= form.submit "Add comment", class: 'btn btn-success btn-sm' %>
-<% end %>
-
+<h2>Comments</h2>
 <%= render partial: "comment", collection: @comments %>
