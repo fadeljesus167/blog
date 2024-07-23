@@ -12,4 +12,9 @@
  *
  *= require_tree .
  *= require_self
+ *= require actiontext
  */
+
+.post {
+    border: 1px solid black;
+}
