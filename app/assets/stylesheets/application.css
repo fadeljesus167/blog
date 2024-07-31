@@ -18,3 +18,11 @@
 .post {
     border: 1px solid black;
 }
+
+.comment {
+    border: 1px solid lightblue;
+}
+
+.comment-date {
+    color: purple;
+}

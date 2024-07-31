@@ -2,3 +2,9 @@ en:
   posts:
     form:
       save: Save post
+    comment_form:
+      send_comment: Send
+  comments:
+    edit:
+      save_changes: Save
+      
