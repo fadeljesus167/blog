@@ -7,4 +7,8 @@ en:
   comments:
     edit:
       save_changes: Save
+  authentication:
+    users:
+      form:
+        register_user: Create user
       
