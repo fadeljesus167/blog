@@ -1,4 +1,4 @@
 <div class="post">
     <h3><%= link_to post.title, post_path(post) %></h3>
-    <%= post.content %>
+    <p><%= truncate(strip_tags(post.content), length: 120) %></p>
 </div>
