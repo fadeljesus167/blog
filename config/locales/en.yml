@@ -11,4 +11,7 @@ en:
     users:
       form:
         register_user: Create user
+    sessions:
+      new:
+        login: Login
       
