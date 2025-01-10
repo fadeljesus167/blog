@@ -1,8 +1,8 @@
 <%= turbo_frame_tag dom_id(@comment) do %>
     <%= form_with model: @comment do |form| %>
         <div>
-            <%= form.label :content %>
-            <%= form.text_area :content %>
+            <%= form.label :body %>
+            <%= form.text_area :body %>
         </div>
         <%= form.hidden_field :post_id, value: @comment.post_id %>
         <%= form.submit t('.save_changes') %>
